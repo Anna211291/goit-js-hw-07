@@ -21,6 +21,7 @@ function createMarkup(arr) {
 gallery.insertAdjacentHTML("afterbegin", createMarkup(galleryItems));
 
 gallery.addEventListener("click", hendlerClick);
+// gallery.addEventListener("keydown", hendlerClose);
 
 function hendlerClick(evt) {
     evt.preventDefault();
@@ -34,9 +35,17 @@ function hendlerClick(evt) {
 `)
 instance.show()
 
+  document.addEventListener("keydown", hendlerClose);
+  function hendlerClose(evt) {
+    if (evt.code === "Escape") {
+  instance.close()
+  }
+} 
 }
 
+// function hendlerClose(evt) {
 
+// }
 
 /* <li class="gallery__item">
   <a class="gallery__link" href="large-image.jpg">
