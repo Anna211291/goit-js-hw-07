@@ -21,7 +21,6 @@ function createMarkup(arr) {
 gallery.insertAdjacentHTML("afterbegin", createMarkup(galleryItems));
 
 gallery.addEventListener("click", hendlerClick);
-// gallery.addEventListener("keydown", hendlerClose);
 
 function hendlerClick(evt) {
     evt.preventDefault();
@@ -43,9 +42,6 @@ instance.show()
 } 
 }
 
-// function hendlerClose(evt) {
-
-// }
 
 /* <li class="gallery__item">
   <a class="gallery__link" href="large-image.jpg">
