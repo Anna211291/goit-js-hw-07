@@ -31,10 +31,11 @@ function hendlerClick(evt) {
     const largeImg = evt.target.dataset.source;
     const instance = basicLightbox.create(`
     <img src="${largeImg}" width="800" height="600">
-`)
+`, {
+  onShow: (instance) => { document.addEventListener("keydown", hendlerClose);},
+	onClose: (instance) => { document.removeEventListener("keydown", hendlerClose);}
+})
 instance.show()
-
-  document.addEventListener("keydown", hendlerClose);
   function hendlerClose(evt) {
     if (evt.code === "Escape") {
   instance.close()
